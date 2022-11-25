@@ -90,7 +90,7 @@ struct WebView: UIViewRepresentable {
 
         // Navigation delegate methods for ProgressView/errors
         func webView(_ webView: WKWebView, didStartProvisionalNavigation navigation: WKNavigation!) {
-            parent.webModel.showLoadingProgress = true
+            parent.webModel.showLoadingProgress = false
         }
 
         func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
@@ -351,11 +351,9 @@ struct WebView: UIViewRepresentable {
         tapGesture.delegate = context.coordinator
         webModel.webView.addGestureRecognizer(tapGesture)
 
-        let refreshControl = UIRefreshControl()
-        refreshControl.addTarget(context.coordinator, action: #selector(context.coordinator.refreshWebView), for: .valueChanged)
-        webModel.webView.scrollView.addSubview(refreshControl)
-        webModel.webView.scrollView.bounces = true
-
+        webModel.webView.scrollView.bounces = false
+        webModel.webView.scrollView.alwaysBounceVertical = false
+        
         webModel.webView.uiDelegate = context.coordinator
         webModel.webView.navigationDelegate = context.coordinator
         webModel.webView.scrollView.delegate = context.coordinator

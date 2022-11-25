@@ -13,7 +13,7 @@ struct RefreshButtonView: View {
     var body: some View {
         Button(action: {
             webModel.webView.reload()
-            webModel.showLoadingProgress = true
+            webModel.showLoadingProgress = false
         }, label: {
             Image(systemName: "arrow.clockwise")
                 .padding(.horizontal, 4)
