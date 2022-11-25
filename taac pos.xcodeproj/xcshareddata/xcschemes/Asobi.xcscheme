@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "7C2248BF26B85D0F00AD3D42"
-               BuildableName = "Asobi.app"
-               BlueprintName = "Asobi"
-               ReferencedContainer = "container:Asobi.xcodeproj">
+               BuildableName = "taac pos.app"
+               BlueprintName = "taac pos"
+               ReferencedContainer = "container:taac pos.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "7C2248D026B85D1000AD3D42"
-               BuildableName = "AsobiTests.xctest"
-               BlueprintName = "AsobiTests"
-               ReferencedContainer = "container:Asobi.xcodeproj">
+               BuildableName = "taac posTests.xctest"
+               BlueprintName = "taac posTests"
+               ReferencedContainer = "container:taac pos.xcodeproj">
             </BuildableReference>
          </TestableReference>
          <TestableReference
@@ -43,9 +43,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "7C2248DB26B85D1000AD3D42"
-               BuildableName = "AsobiUITests.xctest"
-               BlueprintName = "AsobiUITests"
-               ReferencedContainer = "container:Asobi.xcodeproj">
+               BuildableName = "taac posUITests.xctest"
+               BlueprintName = "taac posUITests"
+               ReferencedContainer = "container:taac pos.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -65,9 +65,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "7C2248BF26B85D0F00AD3D42"
-            BuildableName = "Asobi.app"
-            BlueprintName = "Asobi"
-            ReferencedContainer = "container:Asobi.xcodeproj">
+            BuildableName = "taac pos.app"
+            BlueprintName = "taac pos"
+            ReferencedContainer = "container:taac pos.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -82,9 +82,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "7C2248BF26B85D0F00AD3D42"
-            BuildableName = "Asobi.app"
-            BlueprintName = "Asobi"
-            ReferencedContainer = "container:Asobi.xcodeproj">
+            BuildableName = "taac pos.app"
+            BlueprintName = "taac pos"
+            ReferencedContainer = "container:taac pos.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
