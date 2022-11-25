@@ -30,7 +30,7 @@ struct MainView: View {
             .sheet(item: $navModel.currentSheet) { item in
                 switch item {
                 case .library:
-                    LibraryView(currentUrl: webModel.webView.url?.absoluteString ?? "No URL found")
+                    LibraryView(currentUrl: webModel.webView.url?.absoluteString ?? "Nessun URL trovato")
                         .environment(\.managedObjectContext, managedObjectContext)
                         .environmentObject(navModel)
                 case .settings:

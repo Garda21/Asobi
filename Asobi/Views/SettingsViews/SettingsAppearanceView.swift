@@ -24,21 +24,21 @@ struct SettingsAppearanceView: View {
 
         // The combination of toggles and a ColorPicker cause keyboard shortcuts to stop working
         // Reported this bug to Apple
-        Section(header: Text("Appearance")) {
+        Section(header: Text("Aspetto")) {
             Toggle(isOn: $leftHandMode) {
-                Text("Left handed mode")
+                Text("Modalità mano sinistra")
             }
 
             Toggle(isOn: $useDarkTheme) {
-                Text("Use dark theme")
+                Text("Usare tema scuro")
             }
             .disabledAppearance(followSystemTheme)
 
             Toggle(isOn: $followSystemTheme) {
-                Text("Follow system theme")
+                Text("Usare tema di sistema")
             }
 
-            ColorPicker("Accent color", selection: $navigationAccent, supportsOpacity: false)
+            ColorPicker("Colore in evidenza", selection: $navigationAccent, supportsOpacity: false)
                 .onChange(of: navigationAccent) { _ in
                     if statusBarStyleType == .accent {
                         webModel.setStatusbarColor()
@@ -50,18 +50,18 @@ struct SettingsAppearanceView: View {
                     destination: StatusBarStylePicker(),
                     label: {
                         HStack {
-                            Text("Status bar style")
+                            Text("Stile della barra di sistema")
                             Spacer()
                             Group {
                                 switch statusBarStyleType {
                                 case .automatic:
-                                    Text("Automatic")
+                                    Text("Automatico")
                                 case .theme:
-                                    Text("Theme")
+                                    Text("Tema")
                                 case .accent:
-                                    Text("Accent")
+                                    Text("Evidenziato")
                                 case .custom:
-                                    Text("Custom")
+                                    Text("Personalizzato")
                                 }
                             }
                             .foregroundColor(.gray)
@@ -72,7 +72,7 @@ struct SettingsAppearanceView: View {
                     webModel.setStatusbarColor()
                 }
 
-                ColorPicker("Status bar color", selection: $statusBarAccent, supportsOpacity: true)
+                ColorPicker("Colore della barra di sistema", selection: $statusBarAccent, supportsOpacity: true)
                     .onChange(of: statusBarAccent) { _ in
                         webModel.setStatusbarColor()
                     }

@@ -49,11 +49,11 @@ struct StatusBarBehaviorPicker: View {
     var body: some View {
         List {
             Picker(selection: $statusBarPinType, label: EmptyView()) {
-                Text("Hidden")
+                Text("Nascosta")
                     .tag(StatusBarBehaviorType.hide)
-                Text("Partially hidden")
+                Text("Parzialmente nascosta")
                     .tag(StatusBarBehaviorType.partialHide)
-                Text("Pinned")
+                Text("Fissa")
                     .tag(StatusBarBehaviorType.pin)
             }
         }

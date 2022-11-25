@@ -19,20 +19,16 @@ struct AboutView: View {
                 .frame(width: 100, height: 100)
                 .cornerRadius(25)
 
-            Text("Asobi is a free and open source browser application developed by Brian Dashore under the Apache-2.0 license.")
+            Text("taac - il sistema operativo per la ristorazione indipendente")
                 .padding()
 
             List {
-                ListRowTextView(leftText: "Version", rightText: UIApplication.shared.appVersion)
-                ListRowTextView(leftText: "Build number", rightText: UIApplication.shared.appBuild)
-                ListRowTextView(leftText: "Build type", rightText: UIApplication.shared.buildType)
-                ListRowExternalLinkView(text: "App website", link: "https://kingbri.dev/asobi")
-                ListRowExternalLinkView(text: "GitHub repository", link: "https://github.com/bdashore3/Asobi")
-                ListRowExternalLinkView(text: "Discord support", link: "https://discord.gg/pswt7by")
+                ListRowTextView(leftText: "L'applicazione taac POS si basa su Asobi un programma gratuito e open source sviluppato da Brian Dashore con licenza Apache-2.0.")
+                ListRowExternalLinkView(text: "Sito web di Brian Dashore", link: "https://kingbri.dev/asobi")
             }
             .listStyle(.insetGrouped)
         }
-        .navigationTitle("About")
+        .navigationTitle("Informazioni")
     }
 }
 

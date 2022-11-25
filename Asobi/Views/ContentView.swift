@@ -42,15 +42,15 @@ struct ContentView: View {
                     switch alert {
                     case .http:
                         return Alert(
-                            title: Text("Download this file?"),
-                            message: Text("Would you like to start this download?"),
-                            primaryButton: .default(Text("Start")) {
+                            title: Text("Scaricare il file?"),
+                            message: Text("Vuoi iniziare il download del file?"),
+                            primaryButton: .default(Text("Inizia")) {
                                 if let downloadUrl = downloadManager.downloadUrl {
                                     Task {
                                         await downloadManager.httpDownloadFrom(url: downloadUrl)
                                     }
                                 } else {
-                                    webModel.toastDescription = "The download URL is invalid"
+                                    webModel.toastDescription = "Impossibile scaricare da questo URL"
                                 }
                             },
                             secondaryButton: .cancel {
@@ -59,12 +59,12 @@ struct ContentView: View {
                         )
                     case .blob:
                         return Alert(
-                            title: Text("Keep this file?"),
-                            message: Text("Would you like keep this downloaded file?"),
-                            primaryButton: .default(Text("Keep")) {
+                            title: Text("Salvere il file?"),
+                            message: Text("Vuoi salvare il file appena scaricato?"),
+                            primaryButton: .default(Text("Salva")) {
                                 downloadManager.completeBlobDownload()
                             },
-                            secondaryButton: .destructive(Text("Delete")) {
+                            secondaryButton: .destructive(Text("Elimina")) {
                                 downloadManager.deleteBlobDownload()
                             }
                         )
@@ -96,7 +96,7 @@ struct ContentView: View {
                                 .frame(width: 60, height: 60)
                         }
 
-                        Text("Loading...")
+                        Text("Caricamento...")
                             .font(.title2)
                     }
                 }
@@ -113,9 +113,9 @@ struct ContentView: View {
                         GroupBox {
                             switch webModel.toastType {
                             case .info:
-                                Text(webModel.toastDescription ?? "This shouldn't be showing up... Contact the dev!")
+                                Text(webModel.toastDescription ?? "Si è verificato un errore inaspettato... contattare supporto@gotaac.it")
                             case .error:
-                                Text("Error: \(webModel.toastDescription ?? "This shouldn't be showing up... Contact the dev!")")
+                                Text("Error: \(webModel.toastDescription ?? "Si è verificato un errore inaspettato... contattare supporto@gotaac.it")")
                             }
                         }
                     }
@@ -137,12 +137,12 @@ struct ContentView: View {
                 if downloadManager.showDownloadProgress {
                     VStack {
                         GroupBox {
-                            Text("Downloading content...")
+                            Text("Download in corso...")
                             HStack {
                                 ProgressView(value: downloadManager.downloadProgress, total: 1.00)
                                     .progressViewStyle(LinearProgressViewStyle(tint: navigationAccent))
 
-                                Button("Cancel") {
+                                Button("Annulla") {
                                     downloadManager.currentDownload?.cancel()
                                     downloadManager.currentDownload = nil
                                     downloadManager.showDownloadProgress = false

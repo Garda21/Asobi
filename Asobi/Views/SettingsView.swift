@@ -23,33 +23,22 @@ struct SettingsView: View {
                 SettingsPrivacyView()
                 SettingsDownloadsView()
                 SettingsWebsiteView()
-                SettingsSyncView()
-
-                // MARK: App icon picker (iDevices only)
-
-                if UIDevice.current.deviceType != .mac {
-                    Section(header: Text("App Icon")) {
-                        AppIconPickerView()
-                    }
-                }
 
                 // MARK: Credentials and problems
 
                 Section {
-                    ListRowExternalLinkView(text: "Guides", link: "https://github.com/bdashore3/Asobi/wiki")
-
-                    ListRowExternalLinkView(text: "Report issues", link: "https://github.com/bdashore3/Asobi/issues")
+                    ListRowTextView(leftText: "Assistenza", rightText: "supporto@gotaac.it")
 
                     NavigationLink(destination: AboutView()) {
-                        Text("About")
+                        Text("Informazioni")
                     }
                 }
             }
             .toggleStyle(SwitchToggleStyle(tint: navigationAccent))
-            .navigationBarTitle("Settings")
+            .navigationBarTitle("Impostazioni")
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
-                    Button("Done") {
+                    Button("Fine") {
                         navModel.currentSheet = nil
                     }
                     .keyboardShortcut(.cancelAction)

@@ -15,7 +15,7 @@ struct LibraryView: View {
     @AppStorage("useDarkTheme") var useDarkTheme = false
     @AppStorage("followSystemTheme") var followSystemTheme = true
 
-    @State var currentUrl: String = "No URL found"
+    @State var currentUrl: String = "Nessun URL trovato"
 
     @State private var dismissSelf = false
     @State private var tabSelect = 0
@@ -85,7 +85,7 @@ struct LibraryView: View {
             .navigationViewStyle(.stack)
         }
         .onAppear {
-            currentUrl = webModel.webView.url?.absoluteString ?? "No URL found"
+            currentUrl = webModel.webView.url?.absoluteString ?? "Nessun URL trovato"
         }
         .blur(radius: UIDevice.current.deviceType == .mac ? 0 : navModel.blurRadius)
     }

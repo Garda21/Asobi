@@ -28,14 +28,11 @@ struct SettingsBehaviorView: View {
     var body: some View {
         // MARK: Browser behavior settings
 
-        Section(header: Text("Behavior"),
+        Section(header: Text("Comportamento"),
                 footer: VStack(alignment: .leading, spacing: 8) {
-                    Text("The clear cache option clears browser cache on app launch.")
-                    Text("The allow browser swipe gestures option toggles the webview's navigation gestures.")
-                    Text("Smart bookmarks will remember the last page you visited for that website")
                 }) {
             Toggle(isOn: $persistNavigation) {
-                Text("Lock navigation bar")
+                Text("Bloccare barra di navigazione")
             }
             .onChange(of: persistNavigation) { changed in
                 if changed {
@@ -46,7 +43,7 @@ struct SettingsBehaviorView: View {
             }
 
             Toggle(isOn: $autoHideNavigation) {
-                Text("Auto hide navigation bar")
+                Text("Nascondere automaticamente la barra di navigazione")
             }
             .onChange(of: autoHideNavigation) { changed in
                 // Immediately hide the navbar to force autohide functionality
@@ -59,11 +56,11 @@ struct SettingsBehaviorView: View {
 
             if UIDevice.current.hasNotch, UIDevice.current.deviceType != .mac {
                 Toggle(isOn: $grayHomeIndicator) {
-                    Text("Gray out home indicator")
+                    Text("Nascondere indicatore home")
                 }
 
                 Toggle(isOn: $showBottomInset) {
-                    Text("Show bottom inset")
+                    Text("Mostra il riquadro inferiore")
                 }
             }
 
@@ -72,16 +69,16 @@ struct SettingsBehaviorView: View {
                     destination: StatusBarBehaviorPicker(),
                     label: {
                         HStack {
-                            Text("Status bar behavior")
+                            Text("Comportamento della barra di stato")
                             Spacer()
                             Group {
                                 switch statusBarPinType {
                                 case .hide:
-                                    Text("Hidden")
+                                    Text("Nascosta")
                                 case .partialHide:
-                                    Text("Partially hidden")
+                                    Text("Parzialmente nascosta")
                                 case .pin:
-                                    Text("Pinned")
+                                    Text("Fissa")
                                 }
                             }
                             .foregroundColor(.gray)
@@ -94,25 +91,25 @@ struct SettingsBehaviorView: View {
             }
 
             Toggle(isOn: $forceFullScreen) {
-                Text("Force fullscreen video")
+                Text("Video a schermo intero")
             }
             .onChange(of: forceFullScreen) { _ in
                 showForceFullScreenAlert.toggle()
             }
             .alert(isPresented: $showForceFullScreenAlert) {
                 Alert(
-                    title: Text(forceFullScreen ? "Fullscreen enabled" : "Fullscreen disabled"),
-                    message: Text("Changing this setting requires an app restart"),
+                    title: Text(forceFullScreen ? "Schermo intero attivo" : "Schermo intero disattivo"),
+                    message: Text("Bisogna riavviare l'app per cambiare questa impostazione"),
                     dismissButton: .cancel(Text("OK"))
                 )
             }
 
             Toggle(isOn: $clearCacheAtStart) {
-                Text("Clear cache on app launch")
+                Text("Cancellare cache all'avvio")
             }
 
             Toggle(isOn: $allowSwipeNavGestures) {
-                Text("Allow browser swipe gestures")
+                Text("Abilitare gestures da browser")
             }
             .onChange(of: allowSwipeNavGestures) { changed in
                 if changed {
@@ -122,9 +119,6 @@ struct SettingsBehaviorView: View {
                 }
             }
 
-            Toggle(isOn: $useStatefulBookmarks) {
-                Text("Smart bookmarks")
-            }
         }
     }
 }

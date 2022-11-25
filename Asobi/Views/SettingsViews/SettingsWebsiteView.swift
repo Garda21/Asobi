@@ -22,9 +22,9 @@ struct SettingsWebsiteView: View {
     var body: some View {
         // MARK: Website settings (settings that can alter website content)
 
-        Section(header: Text("Website settings")) {
+        Section(header: Text("Sito web")) {
             Toggle(isOn: $changeUserAgent) {
-                Text("Request \(UIDevice.current.userInterfaceIdiom == .pad || UIDevice.current.userInterfaceIdiom == .mac ? "mobile" : "desktop") website")
+                Text("Richiedi sito \(UIDevice.current.userInterfaceIdiom == .pad || UIDevice.current.userInterfaceIdiom == .mac ? "mobile" : "desktop") ")
             }
             .onChange(of: changeUserAgent) { changed in
                 webModel.setUserAgent(changeUserAgent: changed)
@@ -34,11 +34,7 @@ struct SettingsWebsiteView: View {
 
         // MARK: Default URL setting
 
-        Section(header: Text("Default URL"),
-                footer: VStack(alignment: .leading, spacing: 8) {
-                    Text("Sets the default URL when the app is launched. Https will be automatically added if you don't provide it.")
-                    Text("The load most recent URL option loads the last URL from history on app launch.")
-                }) {
+        Section(header: Text("URL di default")) {
             // Auto capitalization modifier will be deprecated at some point
             TextField("https://...", text: $defaultUrl, onEditingChanged: { begin in
                 if !begin, UIDevice.current.deviceType != .mac {
@@ -58,21 +54,21 @@ struct SettingsWebsiteView: View {
             .autocapitalization(.none)
             .alert(isPresented: $showUrlChangeAlert) {
                 Alert(
-                    title: Text("The default URL was changed"),
-                    message: Text("Your page should have refreshed to the new URL"),
-                    dismissButton: .cancel(Text("OK!"))
+                    title: Text("Modificato URL di default"),
+                    message: Text("La pagina si caricherà automaticamente"),
+                    dismissButton: .cancel(Text("OK"))
                 )
             }
             .disabledAppearance(loadLastHistory)
 
             Toggle(isOn: $loadLastHistory) {
-                Text("Load most recent URL")
+                Text("Carica URL più recente")
             }
         }
 
-        Section(header: Text("URL bar")) {
+        Section(header: Text("Barra indirizzo")) {
             Toggle(isOn: $useUrlBar) {
-                Text("Enable URL bar")
+                Text("Abilita barra URL")
             }
             .onChange(of: useUrlBar) { changed in
                 if changed {
@@ -81,9 +77,7 @@ struct SettingsWebsiteView: View {
             }
             .alert(isPresented: $showUrlBarAlert) {
                 Alert(
-                    title: Text("URL bar enabled"),
-                    message: Text("This can be shown through the library context menu. \n\n" +
-                        "If this interferes with the browsing experience, please disable the setting."),
+                    title: Text("Barra URL abilitata"),
                     dismissButton: .default(Text("OK"))
                 )
             }

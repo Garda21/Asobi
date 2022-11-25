@@ -104,8 +104,7 @@ struct ListRowTextView: View {
             if let rightText = rightText {
                 Text(rightText)
             } else {
-                Image(systemName: rightSymbol!)
-                    .foregroundColor(.gray)
+                
             }
         }
     }

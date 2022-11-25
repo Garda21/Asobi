@@ -23,8 +23,8 @@ struct SettingsDownloadsView: View {
         // MARK: Downloads directory (for iDevices)
 
         if UIDevice.current.deviceType != .mac {
-            Section(header: Text("Download options"),
-                    footer: Text("If a downloaded file has the same name as a local file, the local file will be overwritten if the toggle is on.")) {
+            Section(header: Text("Downloads")
+                    ) {
                 HStack {
                     Text("Downloads")
 
@@ -50,10 +50,10 @@ struct SettingsDownloadsView: View {
                 }
 
                 Toggle(isOn: $overwriteDownloadedFiles) {
-                    Text("Overwrite files on download")
+                    Text("Sovrascrivi file duplicati")
                 }
 
-                Button("Reset download directory") {
+                Button("Inizializza cartella downloads") {
                     downloadDirectoryBookmark = nil
                     defaultDownloadDirectory = ""
 
@@ -62,8 +62,8 @@ struct SettingsDownloadsView: View {
                 .foregroundColor(.red)
                 .alert(isPresented: $showDownloadResetAlert) {
                     Alert(
-                        title: Text("Success"),
-                        message: Text("The downloads directory has been reset to Asobi's documents folder"),
+                        title: Text("Completato"),
+                        message: Text("La cartella dei downloads è stata inizializzata correttamente"),
                         dismissButton: .default(Text("OK"))
                     )
                 }

@@ -27,18 +27,18 @@ struct SettingsPrivacyView: View {
     var body: some View {
         // MARK: Privacy settings
 
-        Section(header: Text("Privacy and security"),
-                footer: Text("The adblocker blocks in-page ads and the popup blocker blocks popups. Make sure to enable what you need.")) {
+        Section(header: Text("Privacy e sicurezza"))
+                 {
             Toggle(isOn: $incognitoMode) {
-                Text("Incognito mode")
+                Text("Modalità privata")
             }
 
             Toggle(isOn: $httpsOnlyMode) {
-                Text("Https only mode")
+                Text("Consenti solo HTTPS")
             }
 
             Toggle(isOn: $blockAds) {
-                Text("Block ads")
+                Text("Blocca pubblicità")
             }
             .onChange(of: blockAds) { changed in
                 if changed {
@@ -53,29 +53,29 @@ struct SettingsPrivacyView: View {
             }
             .alert(isPresented: $showAdblockAlert) {
                 Alert(
-                    title: Text(blockAds ? "Adblock enabled" : "Adblock disabled"),
-                    message: Text("The page will refresh when you exit settings"),
+                    title: Text(blockAds ? "Adblock attivo" : "Adblock disattivo"),
+                    message: Text("La pagina si ricaricherà alla chiusura di questa finestra"),
                     dismissButton: .cancel(Text("OK"))
                 )
             }
 
             Toggle(isOn: $blockPopups) {
-                Text("Block popups")
+                Text("Blocca popups")
             }
 
             if blockPopups {
-                NavigationLink("Popup exceptions", destination: PopupExceptionView())
+                NavigationLink("Ecccezioni popup", destination: PopupExceptionView())
             }
 
             if UIDevice.current.deviceType != .mac {
                 Toggle(isOn: $blurInRecents) {
-                    Text("Blur in recents menu")
+                    Text("Blur nei menu recenti")
                 }
             }
 
             if navModel.authenticationPresent() {
                 Toggle(isOn: $forceSecurityCredentials) {
-                    Text("Force authentication")
+                    Text("Richiedi autenticazione")
                 }
                 .onChange(of: forceSecurityCredentials) { changed in
                     // To prevent looping of authentication prompts
@@ -90,13 +90,13 @@ struct SettingsPrivacyView: View {
                         do {
                             let result = try await context.evaluatePolicy(
                                 .deviceOwnerAuthentication,
-                                localizedReason: "Authentication is required to change this setting"
+                                localizedReason: "Bisogna autenticarsi per cambiare questo parametro"
                             )
 
                             forceSecurityCredentials = result ? changed : !changed
                         } catch {
                             // Ignore and log the error
-                            debugPrint("Settings authentication error!: \(error)")
+                            debugPrint("Errore autenticazione: \(error)")
 
                             await MainActor.run {
                                 alreadyAuthenticated = true

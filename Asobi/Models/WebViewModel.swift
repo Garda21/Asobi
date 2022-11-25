@@ -58,7 +58,7 @@ class WebViewModel: ObservableObject {
     private let javaScriptLoader: JavaScriptLoader = .init()
 
     // Make a non mutable fallback URL
-    private let fallbackUrl = URL(string: "https://kingbri.dev/asobi")
+    private let fallbackUrl = URL(string: "https://gotaac.it/it")
 
     // Has the page loaded once?
     @Published var firstLoad: Bool = false
