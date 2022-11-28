@@ -19,7 +19,6 @@
 		0C1D89AF2852AA7600DA5B5F /* UrlBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C1D89AE2852AA7600DA5B5F /* UrlBarView.swift */; };
 		0C21519027237E0900C3976A /* BookmarkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C21518F27237E0900C3976A /* BookmarkView.swift */; };
 		0C2AD1F227698A9E00C764DB /* DownloadManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C2AD1F127698A9E00C764DB /* DownloadManager.swift */; };
-		0C2DBDE6277A5DCA004BC5AB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C2DBDE5277A5DCA004BC5AB /* LaunchScreen.storyboard */; };
 		0C30B3D6282F1EA700D59AA1 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C30B3D5282F1EA700D59AA1 /* CloudKit.framework */; };
 		0C30B3E1282F2F1100D59AA1 /* History+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C30B3E0282F2F1100D59AA1 /* History+CoreDataClass.swift */; };
 		0C30B3E3282F2F1D00D59AA1 /* History+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C30B3E2282F2F1D00D59AA1 /* History+CoreDataProperties.swift */; };
@@ -59,6 +58,7 @@
 		0CC938A428045474003E5338 /* JSLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CC938A328045474003E5338 /* JSLoader.swift */; };
 		0CDE767E278531F100739EBE /* FindInPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CDE767D278531F100739EBE /* FindInPageView.swift */; };
 		0CFCBD3E2740C229003020D9 /* HistoryActionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CFCBD3D2740C229003020D9 /* HistoryActionView.swift */; };
+		5F9EFF0A2934ABBD000D4BCD /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5F9EFF092934ABBD000D4BCD /* Launch Screen.storyboard */; };
 		7C20C0BD26B9AF5A004D8618 /* WebViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C20C0BC26B9AF5A004D8618 /* WebViewModel.swift */; };
 		7C20C0BF26BB4C02004D8618 /* NavigationBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C20C0BE26BB4C02004D8618 /* NavigationBarView.swift */; };
 		7C20C0C126BC3B4B004D8618 /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C20C0C026BC3B4B004D8618 /* AboutView.swift */; };
@@ -106,7 +106,6 @@
 		0C1D89AE2852AA7600DA5B5F /* UrlBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UrlBarView.swift; sourceTree = "<group>"; };
 		0C21518F27237E0900C3976A /* BookmarkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkView.swift; sourceTree = "<group>"; };
 		0C2AD1F127698A9E00C764DB /* DownloadManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadManager.swift; sourceTree = "<group>"; };
-		0C2DBDE5277A5DCA004BC5AB /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0C30B3D5282F1EA700D59AA1 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		0C30B3D7282F213D00D59AA1 /* AsobiDB_v2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = AsobiDB_v2.xcdatamodel; sourceTree = "<group>"; };
 		0C30B3E0282F2F1100D59AA1 /* History+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "History+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -146,6 +145,7 @@
 		0CC938A328045474003E5338 /* JSLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSLoader.swift; sourceTree = "<group>"; };
 		0CDE767D278531F100739EBE /* FindInPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindInPageView.swift; sourceTree = "<group>"; };
 		0CFCBD3D2740C229003020D9 /* HistoryActionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryActionView.swift; sourceTree = "<group>"; };
+		5F9EFF092934ABBD000D4BCD /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		7C20C0BC26B9AF5A004D8618 /* WebViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewModel.swift; sourceTree = "<group>"; };
 		7C20C0BE26BB4C02004D8618 /* NavigationBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarView.swift; sourceTree = "<group>"; };
 		7C20C0C026BC3B4B004D8618 /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
@@ -362,6 +362,7 @@
 		7C2248C226B85D0F00AD3D42 /* Asobi */ = {
 			isa = PBXGroup;
 			children = (
+				5F9EFF092934ABBD000D4BCD /* Launch Screen.storyboard */,
 				0CAA094028028BB2007A0F77 /* Models */,
 				0CAA093F28028B1B007A0F77 /* RepresentableViews */,
 				0CAA093E28028AE1007A0F77 /* DataManagement */,
@@ -374,7 +375,6 @@
 				7C2248CC26B85D1000AD3D42 /* Info.plist */,
 				7C2248C926B85D1000AD3D42 /* Preview Content */,
 				0C58C77127064209008D8A79 /* blocklist.json */,
-				0C2DBDE5277A5DCA004BC5AB /* LaunchScreen.storyboard */,
 			);
 			path = Asobi;
 			sourceTree = "<group>";
@@ -519,12 +519,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				7C2248CB26B85D1000AD3D42 /* Preview Assets.xcassets in Resources */,
-				0C2DBDE6277A5DCA004BC5AB /* LaunchScreen.storyboard in Resources */,
 				0C977CE82805A798000D7323 /* ZoomUnlocker.js in Resources */,
 				0C977CEA2805A7D5000D7323 /* MacOSPaste.js in Resources */,
 				0C55FD1C27823127001FA90E /* FindInPage.js in Resources */,
 				7C2248C826B85D1000AD3D42 /* Assets.xcassets in Resources */,
 				0C58C77227064209008D8A79 /* blocklist.json in Resources */,
+				5F9EFF0A2934ABBD000D4BCD /* Launch Screen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -764,13 +764,13 @@
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_ENTITLEMENTS = Asobi/Asobi.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_ASSET_PATHS = "\"Asobi/Preview Content\"";
 				DEVELOPMENT_TEAM = KVG6RT5CD8;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = Asobi/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "taac pos";
-				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.food-and-drink";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -795,13 +795,13 @@
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_ENTITLEMENTS = Asobi/Asobi.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_ASSET_PATHS = "\"Asobi/Preview Content\"";
 				DEVELOPMENT_TEAM = KVG6RT5CD8;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = Asobi/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "taac pos";
-				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.food-and-drink";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

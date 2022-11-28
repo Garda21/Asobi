@@ -18,10 +18,9 @@ struct SettingsBehaviorView: View {
     @AppStorage("forceFullScreen") var forceFullScreen = false
     @AppStorage("clearCacheAtStart") var clearCacheAtStart = false
     @AppStorage("useStatefulBookmarks") var useStatefulBookmarks = false
+    @AppStorage("allowSwipeNavGestures") var allowSwipeNavGestures = false
 
-    @AppStorage("allowSwipeNavGestures") var allowSwipeNavGestures = true
-
-    @AppStorage("statusBarPinType") var statusBarPinType: StatusBarBehaviorType = .partialHide
+    @AppStorage("statusBarPinType") var statusBarPinType: StatusBarBehaviorType = .pin
 
     @State private var showForceFullScreenAlert: Bool = false
 

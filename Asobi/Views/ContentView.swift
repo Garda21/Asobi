@@ -19,7 +19,7 @@ struct ContentView: View {
     @AppStorage("useDarkTheme") var useDarkTheme = false
     @AppStorage("followSystemTheme") var followSystemTheme = true
     @AppStorage("navigationAccent") var navigationAccent: Color = .red
-    @AppStorage("statusBarPinType") var statusBarPinType: StatusBarBehaviorType = .partialHide
+    @AppStorage("statusBarPinType") var statusBarPinType: StatusBarBehaviorType = .pin
     @AppStorage("showBottomInset") var showBottomInset = false
 
     @State private var isKeyboardPresented = false

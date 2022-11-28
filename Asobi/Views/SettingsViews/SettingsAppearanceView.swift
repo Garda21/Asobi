@@ -16,7 +16,7 @@ struct SettingsAppearanceView: View {
     @AppStorage("followSystemTheme") var followSystemTheme = true
 
     @AppStorage("navigationAccent") var navigationAccent: Color = .red
-    @AppStorage("statusBarStyleType") var statusBarStyleType: StatusBarStyleType = .automatic
+    @AppStorage("statusBarStyleType") var statusBarStyleType: StatusBarStyleType = .custom
     @AppStorage("statusBarAccent") var statusBarAccent: Color = .clear
 
     var body: some View {

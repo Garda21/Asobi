@@ -21,7 +21,7 @@ struct MainView: View {
     @AppStorage("blurInRecents") var blurInRecents = false
     @AppStorage("useDarkTheme") var useDarkTheme = false
     @AppStorage("followSystemTheme") var followSystemTheme = true
-    @AppStorage("statusBarPinType") var statusBarPinType: StatusBarBehaviorType = .partialHide
+    @AppStorage("statusBarPinType") var statusBarPinType: StatusBarBehaviorType = .pin
     @AppStorage("grayHomeIndicator") var grayHomeIndicator = false
     @AppStorage("useStatefulBookmarks") var useStatefulBookmarks = false
 

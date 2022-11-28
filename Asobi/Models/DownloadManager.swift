@@ -63,14 +63,14 @@ class DownloadManager: ObservableObject {
         }
 
         if currentDownload != nil {
-            webModel?.toastDescription = "Cannot download this file. A download is already in progress."
+            webModel?.toastDescription = "Impossibile scaricare ora. Un altro file è già in download."
             return
         }
 
         let progressTimer = DownloadProgressTimer()
 
         let destination: DownloadRequest.Destination = { _, response in
-            let suggestedName = response.suggestedFilename ?? "unknown"
+            let suggestedName = response.suggestedFilename ?? "sconosciuto"
 
             // Download into the temporary download directory
             let defaultDownloadPath = self.getFallbackDownloadDirectory(isFavicon: false)
@@ -105,20 +105,20 @@ class DownloadManager: ObservableObject {
         downloadProgress = 0.0
 
         if let error = response.error {
-            webModel?.toastDescription = "Download could not be completed. \(error)"
+            webModel?.toastDescription = "Impossibile completare il download. \(error)"
             return
         }
 
         // MacOS uses the user's downloads folder by default
         if UIDevice.current.deviceType == .mac {
             webModel?.toastType = .info
-            webModel?.toastDescription = "File successfully downloaded to your downloads directory"
+            webModel?.toastDescription = "Download concluso con successo"
             return
         }
 
         guard let tempUrl = response.value else {
             // The file is in the user's documents directory, break out
-            webModel?.toastDescription = "Could not get the URL for your downloads directory, so the file was downloaded to Asobi's downloads directory"
+            webModel?.toastDescription = "Impossibile scaricare il file nella cartella richiesta, è possibile accedervi tra i downloads di taac pos"
             return
         }
 
@@ -126,14 +126,14 @@ class DownloadManager: ObservableObject {
             moveToDownloadsDirectory(tempUrl: tempUrl, bookmarkData: bookmarkData)
         } else {
             webModel?.toastType = .info
-            webModel?.toastDescription = "File successfully downloaded to Asobi's downloads directory"
+            webModel?.toastDescription = "File scaricato con successo tra i downloads di taac pos"
         }
     }
 
     // Import blob URL
     func blobDownloadWith(jsonString: String) {
         guard let jsonData = jsonString.data(using: .utf8) else {
-            webModel?.toastDescription = "Cannot convert blob JSON into data!"
+            webModel?.toastDescription = "Impossibile convertire il file JSON in dati"
             return
         }
 

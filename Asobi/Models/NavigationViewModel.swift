@@ -76,7 +76,7 @@ class NavigationViewModel: ObservableObject {
 
         // Can we authenticate?
         if context.canEvaluatePolicy(.deviceOwnerAuthentication, error: &error) {
-            let reason = "Authentication is required to access Asobi"
+            let reason = "Autenticarsi per accedere a taac pos"
 
             do {
                 let result = try await context.evaluatePolicy(.deviceOwnerAuthentication, localizedReason: reason)
@@ -96,7 +96,7 @@ class NavigationViewModel: ObservableObject {
                     }
                 }
 
-                print("Is unlocked: \(isUnlocked)")
+                print("Sbloccato: \(isUnlocked)")
             }
         } else {
             // There's no authentication methods, so unlock anyway, show an error, and turn off the setting

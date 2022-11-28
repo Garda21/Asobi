@@ -13,7 +13,7 @@ import UIKit
 
 // ObservableObject to observe statusbar changes and set accordingly
 class AsobiRootViewController: UIViewController, ObservableObject {
-    @AppStorage("statusBarPinType") var statusBarPinType: StatusBarBehaviorType = .partialHide
+    @AppStorage("statusBarPinType") var statusBarPinType: StatusBarBehaviorType = .pin
 
     var rootViewController: UIViewController?
     var style: UIStatusBarStyle = .lightContent {

@@ -44,21 +44,21 @@ class WebViewModel: ObservableObject {
     @AppStorage("clearCacheAtStart") private var clearCacheAtStart = false
     @AppStorage("useDarkTheme") private var useDarkTheme = false
     @AppStorage("loadLastHistory") private var loadLastHistory = false
+    @AppStorage("allowSwipeNavGestures") private var allowSwipeNavGestures = false
 
     // Default true settings
     @AppStorage("followSystemTheme") private var followSystemTheme = true
-    @AppStorage("allowSwipeNavGestures") private var allowSwipeNavGestures = true
 
     // Non-boolean settings
     @AppStorage("defaultUrl") private var defaultUrl = ""
     @AppStorage("navigationAccent") private var navigationAccent: Color = .red
     @AppStorage("statusBarAccent") private var statusBarAccent: Color = .clear
-    @AppStorage("statusBarStyleType") private var statusBarStyleType: StatusBarStyleType = .automatic
+    @AppStorage("statusBarStyleType") private var statusBarStyleType: StatusBarStyleType = .custom
 
     private let javaScriptLoader: JavaScriptLoader = .init()
 
     // Make a non mutable fallback URL
-    private let fallbackUrl = URL(string: "https://gotaac.it/it")
+    private let fallbackUrl = URL(string: "https://dev-1-test.gotaac.it/web")
 
     // Has the page loaded once?
     @Published var firstLoad: Bool = false

@@ -15,7 +15,7 @@ enum StatusBarStyleType: String {
 }
 
 struct StatusBarStylePicker: View {
-    @AppStorage("statusBarStyleType") var statusBarStyleType: StatusBarStyleType = .automatic
+    @AppStorage("statusBarStyleType") var statusBarStyleType: StatusBarStyleType = .custom
 
     var body: some View {
         List {
@@ -44,7 +44,7 @@ enum StatusBarBehaviorType: String {
 }
 
 struct StatusBarBehaviorPicker: View {
-    @AppStorage("statusBarPinType") var statusBarPinType: StatusBarBehaviorType = .partialHide
+    @AppStorage("statusBarPinType") var statusBarPinType: StatusBarBehaviorType = .pin
 
     var body: some View {
         List {

@@ -1,11 +1,11 @@
 {
   "images" : [
     {
+      "filename" : "taac-logo-1-white.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "60x60@3x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
